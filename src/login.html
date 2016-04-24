@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login to Ambient Info</title>
+
+<!-- Bootstrap core CSS -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- Font Awesome CSS, used for Google login button -->
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap-social.css" rel="stylesheet">
+
+
+</head>
+<body>
+	<div class="container">
+		<div class="raw">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2 class="form-signin-heading">Login Into Ambient Info</h2>
+
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a id="google-login"
+							class="btn btn-block btn-social btn-lg btn-google-plus"> <i
+							class="fa fa-google-plus"></i>Sign in with Google
+						</a> <a class="btn btn-block btn-social btn-lg btn-facebook"> <i
+							class="fa fa-facebook"></i>Sign in with Facebook
+						</a> <a class="btn btn-block btn-social btn-lg btn-twitter"> <i
+							class="fa fa-twitter"></i>Sign in with Twitter
+						</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+
+	<script src="js/lib/jquery-1.11.2.min.js"></script>
+	<script src="js/endpoints.js"></script>
+	<script src="js/login.js"></script>
+
+	<script type="text/javascript">
+		$("#google-login").on('click', function () {
+			loginWithGoogle();
+		});
+		
+		function onLoadCallback() {
+			gapi.client.load('plus', 'v1',function(){});
+		}
+			
+ 	</script>
+
+	<script type="text/javascript">
+      	(function() {
+       		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       		po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+       		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    	 })();
+	</script>
+</body>
+</html>

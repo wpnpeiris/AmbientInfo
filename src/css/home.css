@@ -1,0 +1,169 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+
+.navbar-default {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #e0f2f6;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fff;
+}
+
+
+.panel-cust1 {
+  border-color: #e8a064;
+}
+.panel-cust1 > .panel-heading {
+  color: #fff;
+  background-color: #e8a064;
+  border-color: #e8a064;
+}
+.panel-cust1 > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #e8a064;
+}
+.panel-cust1 > .panel-heading .badge {
+  color: #e8a064;
+  background-color: #fff;
+}
+
+.panel-cust1 > .panel-heading i {
+  color: #fff;
+}
+
+.panel-cust1 > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #e8a064;
+}
+
+
+.panel-cust2 {
+  border-color: #be7582;
+}
+.panel-cust2 > .panel-heading {
+  color: #fff;
+  background-color: #be7582;
+  border-color: #be7582;
+}
+.panel-cust2 > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #be7582;
+}
+.panel-cust2 > .panel-heading .badge {
+  color: #be7582;
+  background-color: #fff;
+}
+.panel-cust2 > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #be7582;
+}
+
+
+.panel-cust3 {
+  border-color: #01aea1;
+}
+.panel-cust3 > .panel-heading {
+  color: #fff;
+  background-color: #01aea1;
+  border-color: #01aea1;
+}
+.panel-cust3 > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #01aea1;
+}
+.panel-cust3 > .panel-heading .badge {
+  color: #01aea1;
+  background-color: #fff;
+}
+.panel-cust3 > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #01aea1;
+}
+
+
+
+.carousel-cntl {
+  position: absolute;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  
+  text-align: center;
+}
+
+.carousel-cntl.left {
+ 
+}
+.carousel-cntl.right {
+  right: 0;
+  left: auto;
+}
+
+
+.sidebar-subhead {
+	padding: 2px;
+	font-size: 12px;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 5px;
+  margin-bottom: -1px;
+  background-color: #fff;
+   border: 0px solid #ddd;
+}
+
+a.list-group-item:hover,
+a.list-group-item:focus {
+  color: #e8a064;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.item-desc {
+	font-size: 11px;
+	color: #c0c0c0;
+}
+
+.item-header {
+	font-size: 16px;
+	color: #e8a064;
+}
+.recent-group {
+      height: 250px;      
+      overflow-y: scroll;
+}
+
+.pref-group {
+      height: 400px;      
+      overflow-y: scroll;
+}

@@ -1,0 +1,128 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+
+.navbar-default {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #e0f2f6;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fff;
+}
+
+.ruleform-header {
+	font-size: 14px;
+	color: #cccccc;
+}
+
+.tag-label {
+	background-color: #fff;
+	padding: .2em .6em .3em;
+	border-radius: .25em;
+}
+
+.tag-label-category1 {
+	border: 1px solid #337ab7;
+	color: #337ab7;	
+}
+
+.tag-label-category2 {
+	border: 1px solid #e8a064;
+	color: #e8a064;	
+}
+
+.tag-label-category3 {
+	border: 1px solid #be7582;
+	color: #be7582;	
+}
+
+.tag-label-category4 {
+	border: 1px solid #01aea1;
+	color: #01aea1;	
+}
+
+.tag-header {
+	font-size: 16px;
+	color: #adadad;
+	margin: 0 20px 5px 20px;
+  	padding: 3px 0;
+
+}
+
+.tt-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.tt-suggestion > p {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap;
+}
+.tt-suggestion > p:hover,
+.tt-suggestion > p:focus,
+.tt-suggestion.tt-cursor p {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #e8a064;
+}
+
+
+.table {
+font-size: 12px 
+}

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ambient Info</title>
+
+<!-- Bootstrap core CSS -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Dropdown Lists library-->
+<link href="bootstrap/css/bootstrap-select.min.css" rel="stylesheet">
+
+<!-- Font Awesome-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  
+
+<!-- Custom styles for this template -->
+<link href="css/home.css" rel="stylesheet">
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Ambient Info </a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul id="displayName" class="nav navbar-nav navbar-right">
+					<li><a id="logout" href='#'> <span
+							class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+					</a></li>
+				</ul>
+			</div>
+			<!-- /.nav-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+	<!-- /.navbar -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8">
+				
+
+				<p>
+					<button type="button" class="btn btn-default btn-xs"
+						data-toggle="collapse" href="#mockPanel" aria-expanded="false"
+						aria-controls="mockPanel">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						Mock
+					</button>
+				</p>
+
+				<div id="mockPanel" class="panel panel-default collapse" aria-expanded="false">
+					<div class="panel-body">
+						<div id="ref_inputs" class="raw">
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="ref_category">Category: </label> 
+								<select name="ref_category" class="selectpicker form-control" multiple>
+									<option value="sales">Sales</option>
+									<option value="service">Service</option>
+									<option value="troubleshooting">Troubleshooting</option>
+									<option value="get-started" selected>Get Started</option>
+									<option value="using" selected>Using</option>
+									<option value="problem" selected>Problem</option>
+									<option value="tips" selected>Tips</option>
+								</select> 
+							</div>
+							
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="ref_lang">Language: </label> 
+								<input id="ref_lang" type="text" class="form-control" disabled /> 
+							</div>
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="ref_content_type">Content Type: </label>
+								<select name="ref_content_type" class="selectpicker form-control" multiple>
+									<option value="video" selected>Video</option>
+									<option value="document" selected>Document</option>
+								</select>
+							</div>		
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="ref_content">Content Provider: </label> 
+								<select id="ref_content"
+									class="selectpicker form-control">
+									<optgroup label="Video">
+										<option value="youtube" selected>Youtube</option>
+										<option value="vimeo">Vimeo</option>
+										<option value="vailymotion">Dailymotion</option>
+									</optgroup>
+									<optgroup label="Document">
+										<option value="html">HTML</option>
+										<option value="pdf">PDF</option>
+									</optgroup>
+								</select>
+							</div>		
+									
+						</div>
+
+
+						<div id="apt_inputs" class="raw">
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="apt_region">Region: </label> 
+								<select id="apt_region" class="selectpicker form-control">
+									<option value="Global" selected>Global</option>
+									<option value="Europ" >Europ</option>
+									<option value="Asia">Asia</option>
+									<option value="Stockholm">Stockholm</option>
+									<option value="Colombo">Colombo</option>
+									<option value="Cust-Region1">Cust-Region1</option>
+									<option value="Cust-Region2">Cust-Region2</option>
+								</select> 
+							</div>
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="apt_level">Level:</label> 
+								<select id="apt_level" class="selectpicker form-control">
+									<option value="Normal" selected>Normal</option>
+									<option value="Beginer">Beginer</option>
+									<option value="Advance">Advance</option>
+									<option value="Expert">Expert</option>
+								</select> 
+							</div>
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="apt_gender">Gender: </label> 
+								<select id="apt_gender" class="selectpicker form-control">
+									<option value="Any" selected>Any</option>
+									<option value="Male" >Male</option>
+									<option value="Female">Female</option>
+								</select> 
+							</div>
+							<div class="col-xs-12 col-md-3 form-group">
+								<label for="apt_age">Age: </label> 
+								<select id="apt_age" class="selectpicker form-control">
+									<option value="Any" selected>Any</option>
+									<option value="Children">Children</option>
+									<option value="Youth">Youth</option>
+									<option value="Adults" >Adults</option>
+									<option value="Seniors">Seniors</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div id="product">
+					<div class="panel panel-cust3">
+						<div class="panel-heading">	
+								<button type="button" class="btn btn-default pull-right"
+									data-toggle="collapse" href="#addProduct"
+									aria-label="Left Align">
+									<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+								</button>
+								<h4>My Products/Services</h4>
+						</div>
+						
+						<div class="panel-body">
+							<div id="product-raw" class="row">
+								<div id="addProduct" class="col-xs-12 col-lg-12 collapse">
+									<div class="row">
+										<div class="col-xs-12 col-md-3 form-group">
+											<label for="brand">Brand:</label>
+											<select name="brand" class="selectpicker form-control">
+												<option value="Microsoft">Microsoft</option>
+												<option value="Sony">Sony</option>
+												<option value="Apple">Apple</option>
+												<option value="Samsung">Samsung</option>
+											</select> 
+										</div>
+										<div class="col-xs-12 col-md-3 form-group">
+											<label for="productType">Product Type:</label>
+											<select name="productType" class="selectpicker form-control">
+												<option value="Mobile">Mobile</option>
+												<option value="Tablet">Tablet</option>
+												<option value="PC">PC</option>
+											</select> 
+										</div>
+										<div class="col-xs-12 col-md-3 form-group">
+											<label for="modelCode">Model Code:</label>
+											<input id="modelCode" type="text" class="form-control"/>
+										</div>
+										<div class="col-xs-12 col-md-3 form-group">
+											<label>&nbsp;</label>
+											<button id="addToProductList" class="btn btn-default form-control">
+												<span class="glyphicon glyphicon-check" aria-hidden="true"></span> Add to My Products
+											</button>
+										</div>
+
+									</div>
+									
+									<hr>
+								</div>
+								
+								
+								
+							</div>
+							<div id="myCarousel" class="carousel slide" data-ride="carousel">
+									<!-- Carousel items -->
+								   	<div id="my-products" class="carousel-inner">
+								    	
+								   	</div>
+								   	<div>
+								   		<a class="btn btn-default btn-sm" href="#myCarousel" data-slide="prev" role="button"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+									   	<a class="btn btn-default btn-sm pull-right" href="#myCarousel" data-slide="next" role="button"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+								   	</div>
+							</div>
+							
+							<!--/#product-raw-->
+						</div>
+					</div>
+				</div>
+				<!--/#product-->
+
+				<div class="panel panel-cust2">
+					<div class="panel-heading">
+						<h4>Recommended Products/Services</h4>
+					</div>
+					<div class="panel-body">
+
+						<div class="row">
+							<div class="col-xs-6 col-lg-3">
+								<h4>Product A</h4>
+								<p>Donec id elit non mi porta gravida at eget metus. Fusce
+									dapibus, tellus ac cursus commodo, tortor mauris condimentum
+									nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+									malesuada magna mollis euismod. Donec sed odio dui.</p>
+								<p>
+									<a class="btn btn-default" href="#" role="button">View
+										details &raquo;</a>
+								</p>
+							</div>
+							<!--/.col-xs-6.col-lg-3-->
+							<div class="col-xs-6 col-lg-3">
+								<h4>Product B</h4>
+								<p>Donec id elit non mi porta gravida at eget metus. Fusce
+									dapibus, tellus ac cursus commodo, tortor mauris condimentum
+									nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+									malesuada magna mollis euismod. Donec sed odio dui.</p>
+								<p>
+									<a class="btn btn-default" href="#" role="button">View
+										details &raquo;</a>
+								</p>
+							</div>
+							<!--/.col-xs-6.col-lg-3-->
+							<div class="col-xs-6 col-lg-3">
+								<h4>Product C</h4>
+								<p>Donec id elit non mi porta gravida at eget metus. Fusce
+									dapibus, tellus ac cursus commodo, tortor mauris condimentum
+									nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+									malesuada magna mollis euismod. Donec sed odio dui.</p>
+								<p>
+									<a class="btn btn-default" href="#" role="button">View
+										details &raquo;</a>
+								</p>
+							</div>
+							<!--/.col-xs-6.col-lg-3-->
+							<div class="col-xs-6 col-lg-3">
+								<h4>Product D</h4>
+								<p>Donec id elit non mi porta gravida at eget metus. Fusce
+									dapibus, tellus ac cursus commodo, tortor mauris condimentum
+									nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+									malesuada magna mollis euismod. Donec sed odio dui.</p>
+								<p>
+									<a class="btn btn-default" href="#" role="button">View
+										details &raquo;</a>
+								</p>
+							</div>
+							<!--/.col-xs-6.col-lg-3-->
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--/.col-xs-12.col-sm-9-->
+
+			<div class="col-xs-12 col-sm-4" id="sidebar">
+				<div class="panel panel-cust1">
+					<div class="panel-heading">
+						
+						<h4>Tips
+							<a class="pull-right">
+								<i class="fa fa-lightbulb-o fa-2x"></i>
+							</a>
+							<p class="sidebar-subhead" >Troubleshooting/Help Materials</p>
+						</h4>
+						<div class="input-group">
+					      <span class="input-group-btn">
+					        <button id="search-btn" class="btn btn-default" type="button">
+					        	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					        </button>
+					      </span>
+					      <input id="search-text" type="text" class="form-control" placeholder="Search for...">
+					    </div><!-- /input-group -->
+					</div>
+					<div class="panel-body">
+						<p class="item-header">Relevance</p>
+						<div class="pref-group">
+							<div id="referance" class="list-group">
+							</div>
+						</div>
+						
+						<hr>
+						<br>
+						<p class="item-header">Recently Added</p>
+						<div class="recent-group">
+							<div class="list-group">
+								<a id="testModel" href="#" 
+									class="list-group-item"
+									data-toggle="modal" 
+									data-backdrop="static"
+									data-target="#refModal" 
+									data-refid = "100"
+									data-refdesc = "Sony Xperia Z3: Everything You Need to Know"
+									data-refuri = "https://www.youtube-nocookie.com/embed/reWHV-wWATE?rel=0&enablejsapi=1&autoplay=1">
+									Sony Xperia Z3: Everything You Need to Know	
+									<p class="item-desc"> All the information you need to know about the Sony Xperia Z3. TechRadar reports live from IFA 2014 </p>			
+								</a>
+								
+								<a id="testModel" href="#" 
+									class="list-group-item"
+									data-toggle="modal" 
+									data-backdrop="static"
+									data-target="#refModal" 
+									data-refid = "100"
+									data-refdesc = "Sony Xperia Tablet S 4.0.3 WiFi Firmware Update"
+									data-refuri = "https://www.youtube-nocookie.com/embed/UErds4iUrso?rel=0&enablejsapi=1&autoplay=1">
+									Sony Xperia Tablet S 4.0.3 WiFi Firmware Update	
+									<p class="item-desc">By TheDigitalDigest</p>			
+								</a>
+								
+								<a id="testModel" href="#" 
+									class="list-group-item"
+									data-toggle="modal" 
+									data-backdrop="static"
+									data-target="#refModal" 
+									data-refid = "100"
+									data-refdesc = "10 Reasons Sony Xperia Z3 Is Better Than iPhone 6"
+									data-refuri = "https://www.youtube-nocookie.com/embed/1WKh_IccpAQ?rel=0&enablejsapi=1&autoplay=1">
+									10 Reasons Sony Xperia Z3 Is Better Than iPhone 6
+									<p class="item-desc">By Ask Corie</p>			
+								</a>
+								
+								<a id="testModel" href="#" 
+									class="list-group-item"
+									data-toggle="modal" 
+									data-backdrop="static"
+									data-target="#refModal" 
+									data-refid = "100"
+									data-refdesc = "Sony Xperia Z4 Tablet hands-on"
+									data-refuri = "https://www.youtube-nocookie.com/embed/NxC8sxTrPRo?rel=0&enablejsapi=1&autoplay=1">
+									Sony Xperia Z4 Tablet hands-on
+									<p class="item-desc">By PhoneArena</p>			
+								</a>
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+			<!--/.sidebar-offcanvas-->
+
+		</div>
+		<!--/row-->
+
+		<!-- Reference View -->
+		<div id="refModal" class="modal fade" tabindex="-1" role="dialog"
+			aria-labelledby="refModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button id="closebtn" type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="refModalLabel">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<iframe frameborder='0' height='' width='100%' src='' allowfullscreen></iframe>
+					</div>
+					<div class="modal-footer">
+						<input id="refId" type="hidden"/>
+						<input id="userId" type="hidden"/>
+						<h5>Was this helpful?
+							<button id="likebtn" type="button" class="btn btn-default" aria-label="Like">
+								<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+							</button>
+							<button id="dislikebtn" type="button" class="btn btn-default" aria-label="Like">
+								<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+							</button>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!--/.container-->
+
+
+
+	<script id="myProductTemplate" type="text/template">
+
+				
+					<h4> <%= brand %> <%= productType %> 
+						<button id="delete" type="button" class="btn btn-default pull-right" >
+  							<span class="glyphicon glyphicon-trash"></span>
+						</button>
+					</h4>
+					<p><%= modelCode %></p>
+              		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+             		<p>
+             			
+             		</p>
+				
+		</script>
+
+	<script id="referenceTemplate" type="text/template">
+			<a id="testModel" href="#" 
+				class="list-group-item"
+				data-toggle="modal" 
+				data-backdrop="static"
+				data-target="#refModal" 
+				data-refid = "<%= ref_id %>"
+				data-refdesc = "<%= ref_desc %>"
+				data-refuri = "<%= ref_uri %>">
+				<%= ref_desc %> (<%= ref_id %>)	
+				<p class="item-desc"> Rating Score: <%= rank_score %> </p>			
+			</a>
+			
+			
+			 
+		</script>
+
+	<script src="js/lib/aws-sdk-full.js"></script>
+
+
+	<script src="js/lib/jquery-1.11.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Bootstrap Dropdown Lists library-->
+	<script src="bootstrap/js/bootstrap-select.min.js"></script>
+  
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/backbone.js"></script>
+
+	<script src="js/endpoints.js"></script>
+	
+	<script src="js/input/userProfile.js"></script>
+	<script src="js/input/referenceInput.js"></script>
+
+	<script src="js/models/product.js"></script>
+	<script src="js/collections/productList.js"></script>
+	<script src="js/views/myProductView.js"></script>
+	<script src="js/views/myProductListView.js"></script>
+
+	<script src="js/models/reference.js"></script>
+	<script src="js/collections/referenceList.js"></script>
+	<script src="js/views/referenceView.js"></script>
+	<script src="js/views/referenceListView.js"></script>
+
+	<script src="js/app.js"></script>
+
+
+
+	<!-- Used for Google Logout -->
+	<script type="text/javascript">
+			function onLoadCallback() {
+				gapi.client.load('plus', 'v1',function(){});
+			}
+	</script>
+	<script type="text/javascript">
+      	(function() {
+       		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       		po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+       		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    	 })();
+	</script>
+</body>
+</html>
