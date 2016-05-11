@@ -35,7 +35,8 @@ app.ReferenceInput = function() {
 		
 		var refListView = app.ReferenceListView.getInstance();
 		
-		var inputQuery = this.genInputQuery();		
+		var inputQuery = this.genInputQuery();	
+		
 		$.getJSON( app.SERVICE_ENPOINT + "/search?" + inputQuery, function( data ) {
 			var hits = data.result;
 		
@@ -60,21 +61,41 @@ app.ReferenceInput = function() {
 		
 		var refListView = app.ReferenceListView.getInstance();
 		
-		var inputQuery = this.genInputQuery();		
-		$.getJSON( app.SERVICE_ENPOINT + "/recommendation/" + userid + "?" + inputQuery, function( data ) {
-			var hits = data.result;
-		
-			var refs = [];
-			$.each( hits, function( idx, obj ) {
-				refs[idx] = obj.fields;
-			});
-
-			refListView.reset(refs);
-		}).done(function() { console.log('app.ReferenceInput.trigger succeeded'); })
-		.fail(function() { 
-			console.log('app.ReferenceInput.trigger Failed');
-				
+		var inputQuery = this.genInputQuery();	
+		var request = gapi.client.youtube.search.list({
+			q: inputQuery,
+		    part: 'snippet'
 		});
+
+		request.execute(function(response) {
+			var refs = [];
+			$.each( response.items, function( idx, obj ) {
+//				alert(JSON.stringify(obj));
+				var content = new Object();
+				content["ref_id"] = obj.snippet.title;
+				content["ref_desc"] = obj.snippet.description;
+				content["ref_uri"] = "https://www.youtube-nocookie.com/embed/" + obj.id.videoId;
+				content["ref_thumbnails"] = obj.snippet.thumbnails.medium.url;
+				refs[idx] = content;
+			});
+			refListView.reset(refs);
+		});
+		  
+		  
+//		$.getJSON( app.SERVICE_ENPOINT + "/recommendation/" + userid + "?" + inputQuery, function( data ) {
+//			var hits = data.result;
+//		
+//			var refs = [];
+//			$.each( hits, function( idx, obj ) {
+//				refs[idx] = obj.fields;
+//			});
+//
+//			refListView.reset(refs);
+//		}).done(function() { console.log('app.ReferenceInput.trigger succeeded'); })
+//		.fail(function() { 
+//			console.log('app.ReferenceInput.trigger Failed');
+//				
+//		});
 		
 	}
 	
@@ -101,37 +122,42 @@ app.ReferenceInput = function() {
 	
 	this.genInputQuery  = function() {
 		console.log('Call ReferenceInput.genInputQuery ' ); 
-		var inputQuery = "query=(or ";
-		
-		if(Object.keys(this.aptsInput).length > 0) {
-			inputQuery += "(and ";
-			for(prop in this.aptsInput) {
-				inputQuery += prop;
-				inputQuery += ":'";
-				inputQuery += this.aptsInput[prop];
-				inputQuery += "' ";
-			}
-			inputQuery += " ) ";
-		}
-		
+		var inputQuery = "";
 		if(Object.keys(this.tagsInput).length > 0) {
-			inputQuery += "(or";		
 			for(prop in this.tagsInput) {
-				inputQuery += " tags:'";
 				inputQuery +=  this.tagsInput[prop];
-				inputQuery += "'"
+				inputQuery += "+";
 			}
-			inputQuery += ")";
 		}
 		
-		inputQuery += ")";
-		
+		return inputQuery;
+//		var inputQuery = "query=(or ";
+//		
 //		if(Object.keys(this.aptsInput).length > 0) {
+//			inputQuery += "(and ";
+//			for(prop in this.aptsInput) {
+//				inputQuery += prop;
+//				inputQuery += ":'";
+//				inputQuery += this.aptsInput[prop];
+//				inputQuery += "' ";
+//			}
+//			inputQuery += " ) ";
+//		}
+//		
+//		if(Object.keys(this.tagsInput).length > 0) {
+//			inputQuery += "(or";		
+//			for(prop in this.tagsInput) {
+//				inputQuery += " tags:'";
+//				inputQuery +=  this.tagsInput[prop];
+//				inputQuery += "'"
+//			}
 //			inputQuery += ")";
 //		}
-		
-		inputQuery += "&size=20";
-		return inputQuery;
+//		
+//		inputQuery += ")";
+//		
+//		inputQuery += "&size=20";
+//		return inputQuery;
 		
 	}
 };

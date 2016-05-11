@@ -8,6 +8,7 @@ app.Reference = Backbone.Model.extend({
 		ref_id: 'Unknown',
 		ref_desc: [],
 		ref_uri: 'Unknown',
+		ref_thumbnails: 'Unknown',
 		ref_content: 'Unknown',		
 		ref_lang: 'Unknown',		
 		ref_content_type: 'Unknown',	

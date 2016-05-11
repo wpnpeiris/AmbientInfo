@@ -3,7 +3,9 @@ var app = app || {};
 
 
 
-$(function() {
+app.load = function() {
+//	alert(navigator.userAgent);
+	
 	//Initiate User Profile
 	var userProfile = app.UserProfile.getInstance();
 	userProfile.init(window.location.search.substring(1));
@@ -33,7 +35,7 @@ $(function() {
 		var refuri = $(event.relatedTarget).data('refuri');
 		
 		var modal = $(this);
-		modal.find('.modal-title').text(refid + " : " + refdesc);
+		modal.find('.modal-title').text(refid );
 		modal.find('.modal-body iframe').attr("src", refuri);
 		modal.find('.modal-body iframe').attr("height", ($( window ).height() - 300));
 
@@ -113,9 +115,7 @@ $(function() {
 	var productView = app.MyProductListView.getInstance();
 	productView.init(products);
 	
-	$('#myCarousel').carousel({
-		  interval: false
-	});
+	$('#myCarousel').carousel('pause');
 	
 	$('#myCarousel').on('slid.bs.carousel', function (e) {
 		 var productView = app.MyProductListView.getInstance();
@@ -135,4 +135,4 @@ $(function() {
 	
 	
 	
-});
+};
