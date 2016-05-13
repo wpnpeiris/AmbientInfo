@@ -1,9 +1,9 @@
-cco.predic.models = cco.predic.models || {};
+ambient.predic.models = ambient.predic.models || {};
 
 /**
  * 
  */
-cco.predic.models.Content = Backbone.Model.extend({
+ambient.predic.models.Content = Backbone.Model.extend({
 	defaults: {
 		id: 'Unknown',
 //		ref_desc: [],
@@ -24,7 +24,7 @@ cco.predic.models.Content = Backbone.Model.extend({
 		version: 0
 	},
 	
-	url:  cco.predic.CONTENT_SERVICE_ENPOINT + "/contents",
+	url:  ambient.predic.CONTENT_SERVICE_ENPOINT + "/contents",
 	
 	validation: {
 		ref_id: {
@@ -70,7 +70,7 @@ cco.predic.models.Content = Backbone.Model.extend({
 				 });
 				 
 //				 Render Content Table
-				 cco.predic.views.ContentRuleListView.getInstance().refreshView();
+				 ambient.predic.views.ContentRuleListView.getInstance().refreshView();
 				 
 			  }, 
 			  error: function() {

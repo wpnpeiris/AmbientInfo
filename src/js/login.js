@@ -5,7 +5,7 @@ function loginWithGoogle() {
 		'cookiepolicy' : 'single_host_origin',
 		'callback' : 'loginCallback',
 		'approvalprompt' : 'force',
-		'scope' : 'https://www.googleapis.com/auth/plus.profile.emails.read'
+		'scope' : 'profile email'
 		//'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
 	};
 	gapi.auth.signIn(myParams);

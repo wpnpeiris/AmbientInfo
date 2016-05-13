@@ -6,6 +6,8 @@ var app = app || {};
 app.load = function() {
 //	alert(navigator.userAgent);
 	
+	app.GoogleMap.getInstance().init();
+	
 	//Initiate User Profile
 	var userProfile = app.UserProfile.getInstance();
 	userProfile.init(window.location.search.substring(1));
@@ -101,8 +103,8 @@ app.load = function() {
 
 	//Start with the following Product list
 	var products = [
-            { brand: 'sony', productType: 'mobile', modelCode: 'xperia-z1'},
-            { brand: 'sony', productType: 'tablet', modelCode: 'z-tablet'}
+            { manufacturer: 'Samsung', type: 'Mobile', model: 'S7 Edge'},
+            { manufacturer: 'Apple', type: 'iPad', model: 'Air 2'}
 	];
 	
 	

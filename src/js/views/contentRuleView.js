@@ -1,9 +1,9 @@
-cco.predic.views = cco.predic.views || {};
+ambient.predic.views = ambient.predic.views || {};
 
 /**
  * 
  */
-cco.predic.views.ContentRuleView = Backbone.View.extend({
+ambient.predic.views.ContentRuleView = Backbone.View.extend({
 	tagName: 'tr',
 	template: _.template( $('#contentRuleTemplate').html() ),
 

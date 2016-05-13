@@ -1,6 +1,6 @@
-cco.predic.util = cco.predic.util || {};
+ambient.predic.util = ambient.predic.util || {};
 
-cco.predic.util.tagMatcher = function(strs) {
+ambient.predic.util.tagMatcher = function(strs) {
   return function findMatches(q, cb) {
     var matches, substrRegex;
  

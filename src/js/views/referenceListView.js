@@ -4,8 +4,7 @@ var app = app || {};
  * 
  */
 app.ReferenceListView = Backbone.View.extend({
-	el: $( '#referance' ),
-
+	
 	initialize: function() {
 		console.log('Initialize ReferenceList View' ); 
 		this.collection = new app.ReferenceList();
@@ -52,15 +51,4 @@ app.ReferenceListView = Backbone.View.extend({
 	
 });
 
-app.ReferenceListView.instance = null;
-
-app.ReferenceListView.getInstance = function(){
-	console.log('Call app.ReferenceListView.getInstance'); 
-	if(app.ReferenceListView.instance  == null) {	
-		console.log('Initiate app.ReferenceListView'); 	
-		app.ReferenceListView.instance = new app.ReferenceListView();		
-	}
-	
-	return app.ReferenceListView.instance;
-}; 
 

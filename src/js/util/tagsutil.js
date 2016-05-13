@@ -1,6 +1,6 @@
-cco.predic.util = cco.predic.util || {};
+ambient.predic.util = ambient.predic.util || {};
 
-cco.predic.util.encodeTags = function(v) {
+ambient.predic.util.encodeTags = function(v) {
 	var tagList = v.tags;
 	var encodedTags;
 	if(tagList) {

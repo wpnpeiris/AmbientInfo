@@ -1,6 +1,6 @@
-cco.predic.util = cco.predic.util || {};
+ambient.predic.util = ambient.predic.util || {};
 
-cco.predic.util.Pager = function(target, opts){
+ambient.predic.util.Pager = function(target, opts){
     var $this = target,
         defaults = {
             perPage: 7,

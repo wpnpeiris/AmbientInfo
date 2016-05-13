@@ -33,7 +33,7 @@ app.ReferenceInput = function() {
 		var userProfile = app.UserProfile.getInstance();
 		var userid = userProfile.getProperty('primaryEmail');
 		
-		var refListView = app.ReferenceListView.getInstance();
+		var refListView = app.TipsListView.getInstance();
 		
 		var inputQuery = this.genInputQuery();	
 		
@@ -59,14 +59,26 @@ app.ReferenceInput = function() {
 		var userProfile = app.UserProfile.getInstance();
 		var userid = userProfile.getProperty('primaryEmail');
 		
-		var refListView = app.ReferenceListView.getInstance();
+		
 		
 		var inputQuery = this.genInputQuery();	
-		var request = gapi.client.youtube.search.list({
-			q: inputQuery,
-		    part: 'snippet'
-		});
-
+		this.triggerTips(inputQuery); 
+		this.triggerTroubleshoot(inputQuery); 
+		
+	}
+	
+	this.triggerTips = function(inputQuery) {
+		var request =  this.getQueryRequest(inputQuery + 'tips+tricks');
+		this.listYoutubeRefs(request, app.TipsListView.getInstance());
+	}
+	
+	
+	this.triggerTroubleshoot = function(inputQuery) {
+		var request =  this.getQueryRequest(inputQuery + 'trobleshooting+problem+how+to');
+		this.listYoutubeRefs(request, app.TroubleshootListView.getInstance());
+	}
+	
+	this.listYoutubeRefs = function(request, refListView) {
 		request.execute(function(response) {
 			var refs = [];
 			$.each( response.items, function( idx, obj ) {
@@ -80,23 +92,19 @@ app.ReferenceInput = function() {
 			});
 			refListView.reset(refs);
 		});
-		  
-		  
-//		$.getJSON( app.SERVICE_ENPOINT + "/recommendation/" + userid + "?" + inputQuery, function( data ) {
-//			var hits = data.result;
-//		
-//			var refs = [];
-//			$.each( hits, function( idx, obj ) {
-//				refs[idx] = obj.fields;
-//			});
-//
-//			refListView.reset(refs);
-//		}).done(function() { console.log('app.ReferenceInput.trigger succeeded'); })
-//		.fail(function() { 
-//			console.log('app.ReferenceInput.trigger Failed');
-//				
-//		});
+	}
+	
+	this.getQueryRequest = function(query) {
+		var lang = app.UserProfile.getInstance().getProperty('language') == undefined ? 'en' : app.UserProfile.getInstance().getProperty('language');
 		
+		var request = gapi.client.youtube.search.list({
+			q: query,
+			relevanceLanguage: lang,
+			maxResults: 25,
+		    part: 'snippet'
+		});
+		
+		return request;
 	}
 	
 	this.updateViews = function(userid, refid) {
@@ -131,34 +139,6 @@ app.ReferenceInput = function() {
 		}
 		
 		return inputQuery;
-//		var inputQuery = "query=(or ";
-//		
-//		if(Object.keys(this.aptsInput).length > 0) {
-//			inputQuery += "(and ";
-//			for(prop in this.aptsInput) {
-//				inputQuery += prop;
-//				inputQuery += ":'";
-//				inputQuery += this.aptsInput[prop];
-//				inputQuery += "' ";
-//			}
-//			inputQuery += " ) ";
-//		}
-//		
-//		if(Object.keys(this.tagsInput).length > 0) {
-//			inputQuery += "(or";		
-//			for(prop in this.tagsInput) {
-//				inputQuery += " tags:'";
-//				inputQuery +=  this.tagsInput[prop];
-//				inputQuery += "'"
-//			}
-//			inputQuery += ")";
-//		}
-//		
-//		inputQuery += ")";
-//		
-//		inputQuery += "&size=20";
-//		return inputQuery;
-		
 	}
 };
 

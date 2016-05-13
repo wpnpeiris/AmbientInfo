@@ -33,10 +33,10 @@ app.MyProductListView = Backbone.View.extend({
 			 formData[ el.name ] = $( el ).val();			
 		});
 		
-		if( $( '#addProduct div input' ).val() != '' ){
-			 formData[ $( '#addProduct div input' ).attr('id') ] = $( '#addProduct div input' ).val();	
-		} 
-	
+		$( '#addProduct div' ).children( 'input' ).each( function( i, el ) { 
+			 formData[ el.id ] = $( el ).val();			
+		});
+		
 		this.collection.add( new app.Product( formData ) );
 	}, 
 	

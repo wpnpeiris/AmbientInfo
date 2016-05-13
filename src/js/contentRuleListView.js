@@ -1,9 +1,9 @@
-cco.predic.views = cco.predic.views || {};
+ambient.predic.views = ambient.predic.views || {};
 
 /**
  * 
  */
-cco.predic.views.ContentRuleListView = Backbone.View.extend({
+ambient.predic.views.ContentRuleListView = Backbone.View.extend({
 	el: $( '#contentView' ), 
 	
 	events: {
@@ -20,22 +20,22 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 	initialize: function() {
 		console.log('Initialize ContentRuleListView' ); 
 		
-		this.collection = new cco.predic.models.ContentList();
+		this.collection = new ambient.predic.models.ContentList();
 		this.listenTo( this.collection, 'reset', this.render );
 		
 		this.collection.fetch();
 		
-//		cco.predic.tags.MANUFACTURER.initialize();
-//		cco.predic.tags.PRODUCT.initialize();
-//		cco.predic.tags.MODELS.initialize();
-//		cco.predic.tags.OTHER.initialize();
+//		ambient.predic.tags.MANUFACTURER.initialize();
+//		ambient.predic.tags.PRODUCT.initialize();
+//		ambient.predic.tags.MODELS.initialize();
+//		ambient.predic.tags.OTHER.initialize();
 		
 //		$('#ref_tags').tagsinput({
 //			typeaheadlist:[{
 //			    name: 'tags_manufacturer',
 //			    displayKey: 'value',
 //			    valueKey: 'value',
-//			    source: cco.predic.tags.MANUFACTURER.ttAdapter(),
+//			    source: ambient.predic.tags.MANUFACTURER.ttAdapter(),
 //			    templates: {
 //			        header: '<h3 class="tag-header">Manufacturers</h3>'
 //			      }
@@ -44,7 +44,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 //			    name: 'tags_product',
 //			    displayKey: 'value',
 //			    valueKey: 'value',
-//			    source: cco.predic.tags.PRODUCT.ttAdapter(),
+//			    source: ambient.predic.tags.PRODUCT.ttAdapter(),
 //			    templates: {
 //			        header: '<h3 class="tag-header">Products</h3>'
 //			      }
@@ -53,7 +53,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 //			    name: 'tags_model',
 //			    displayKey: 'value',
 //			    valueKey: 'value',
-//			    source: cco.predic.tags.MODELS.ttAdapter(),
+//			    source: ambient.predic.tags.MODELS.ttAdapter(),
 //			    templates: {
 //			        header: '<h3 class="tag-header">Models</h3>'
 //			      }
@@ -62,7 +62,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 //			    name: 'tags_other',
 //			    displayKey: 'value',
 //			    valueKey: 'value',
-//			    source: cco.predic.tags.OTHER.ttAdapter(),
+//			    source: ambient.predic.tags.OTHER.ttAdapter(),
 //			    templates: {
 //			        header: '<h3 class="tag-header">User Defined</h3>'
 //			      }
@@ -70,7 +70,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 //		});
 		
 		
-		cco.predic.tags.TEST.initialize();
+		ambient.predic.tags.TEST.initialize();
 		$('#ref_tags').tagsinput({
 			tagClass: function(item) {
 			    switch (item.category) {
@@ -86,7 +86,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 			  typeaheadjs: {
 			    name: 'cities',
 			    displayKey: 'value',
-			    source: cco.predic.tags.TEST.ttAdapter()
+			    source: ambient.predic.tags.TEST.ttAdapter()
 			  }
 		});
 	},
@@ -114,7 +114,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 		if(id == '' || url == '' || tags == '') {
 			alert("URL or ID cannot be blank");
 		} else {
-			var content = new cco.predic.models.Content({
+			var content = new ambient.predic.models.Content({
 				ref_id: id,
 				ref_desc: desc,
 				ref_uri: url,
@@ -199,7 +199,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 	},
 	
 	resetContentRuleForm: function(event) {
-		$("#ref_id").val(cco.predic.util.generateUUID());
+		$("#ref_id").val(ambient.predic.util.generateUUID());
 		$("#ref_url").val("");
 		$("#ref_desc").val("");
 		$('#ref_category').selectpicker('val', 'Tips');
@@ -225,7 +225,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 			this.renderLine( item );
 		}, this );
 		
-		cco.predic.util.Pager($('#contentRuleList'), {pagerSelector:'#contentRuleListPager', showPrevNext:true, hidePageNumbers:false, perPage:8});
+		ambient.predic.util.Pager($('#contentRuleList'), {pagerSelector:'#contentRuleListPager', showPrevNext:true, hidePageNumbers:false, perPage:8});
 	},
 	
 	/**
@@ -233,7 +233,7 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 	 */
 	renderLine: function( item ) {
 		console.log('Render Rule line'  + item); 
-		var ruleView = new cco.predic.views.ContentRuleView({
+		var ruleView = new ambient.predic.views.ContentRuleView({
 			model: item
 		});
 		this.$el.find('#contentRuleList').append( ruleView.render().el );
@@ -241,15 +241,15 @@ cco.predic.views.ContentRuleListView = Backbone.View.extend({
 	
 });
 
-cco.predic.views.ContentRuleListView.instance = null;
+ambient.predic.views.ContentRuleListView.instance = null;
 
-cco.predic.views.ContentRuleListView.getInstance = function(){
-	console.log('Call cco.predic.views.ContentRuleListView.getInstance'); 
-	if(cco.predic.views.ContentRuleListView.instance  == null) {	
-		console.log('Initiate cco.predic.views.ContentRuleListView'); 	
-		cco.predic.views.ContentRuleListView.instance = new cco.predic.views.ContentRuleListView();		
+ambient.predic.views.ContentRuleListView.getInstance = function(){
+	console.log('Call ambient.predic.views.ContentRuleListView.getInstance'); 
+	if(ambient.predic.views.ContentRuleListView.instance  == null) {	
+		console.log('Initiate ambient.predic.views.ContentRuleListView'); 	
+		ambient.predic.views.ContentRuleListView.instance = new ambient.predic.views.ContentRuleListView();		
 	}
 	
-	return cco.predic.views.ContentRuleListView.instance;
+	return ambient.predic.views.ContentRuleListView.instance;
 }; 
 

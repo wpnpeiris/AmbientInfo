@@ -1,9 +1,9 @@
-cco.predic.models = cco.predic.models || {};
+ambient.predic.models = ambient.predic.models || {};
 
 /**
  * 
  */
-cco.predic.models.Content = Backbone.Model.extend({
+ambient.predic.models.Content = Backbone.Model.extend({
 	defaults: {
 		ref_id: 'Unknown',
 		ref_desc: [],
