@@ -64,7 +64,14 @@ app.ReferenceInput = function() {
 		var inputQuery = this.genInputQuery();	
 		this.triggerTips(inputQuery); 
 		this.triggerTroubleshoot(inputQuery); 
+		this.triggerInsightInfo(inputQuery);
 		
+	}
+	
+	this.triggerInsightInfo = function(inputQuery) {
+		$.getJSON( app.SERVICE_ENPOINT + "/ambientinfo/sentiment?topic=" + inputQuery, function( data ) {
+			app.InsightListView.getInstance().reset(data);
+		});
 	}
 	
 	this.triggerTips = function(inputQuery) {

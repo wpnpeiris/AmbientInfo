@@ -9,7 +9,10 @@ app.GoogleMap = function() {
 		MAP_DATA['atm'] = {type:SHIELD,  color: "#1998F7", icon: "map-icon-atm"};
 		MAP_DATA['bank'] = {type:SHIELD,  color: "#1998F7", icon: "map-icon-bank"};
 		MAP_DATA['cafe'] = {type:SQUARE_ROUNDED,  color: "#1998F7", icon: "map-icon-cafe"};
+		MAP_DATA['car_repair'] = {type:ROUTE,  color: "#1998F7", icon: "map-icon-car-repair"};
+		MAP_DATA['car_wash'] = {type:ROUTE,  color: "#1998F7", icon: "map-icon-car-wash"};
 		MAP_DATA['dentist'] = {type:SHIELD,  color: "#1998F7", icon: "map-icon-dentist"};
+		MAP_DATA['gas_station'] = {type:SHIELD,  color: "#1998F7", icon: "map-icon-gas-station"};
 		MAP_DATA['grocery_or_supermarket'] = {type:SQUARE_ROUNDED,  color: "#6331AE", icon: "map-icon-grocery-or-supermarket"};
 		MAP_DATA['hospital'] = {type:SHIELD,  color: "#FA8072", icon: "map-icon-health"};
 		MAP_DATA['park'] = {type:ROUTE,  color: "#1998F7", icon: "map-icon-parking"};
@@ -34,7 +37,7 @@ app.GoogleMap = function() {
 			var request = {
 				location : location,
 				radius : '2000',
-				types: ['atm', 'bank', 'cafe', 'dentist', 'park', 'parking', 'grocery_or_supermarket', 'hospital', 'library', 'restaurant', 'university']
+				types: ['atm', 'bank', 'cafe', 'car_repair', 'car_wash', 'dentist', 'gas_station', 'grocery_or_supermarket', 'hospital', 'library', 'park', 'parking', 'restaurant', 'university']
 			};
 			
 			var infowindow = new google.maps.InfoWindow();

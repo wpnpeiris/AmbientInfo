@@ -157,7 +157,7 @@
 				</div>
 				-->
 				<div id="product">
-					<div class="panel panel-cust3">
+					<div class="panel panel-cust1">
 						<div class="panel-heading">	
 								<button type="button" class="btn btn-default pull-right"
 									data-toggle="collapse" href="#addProduct"
@@ -245,8 +245,18 @@
 				</div>
 				<!--/#product-->
 
+				<!-- Insigt -->
+				<div class="panel panel-cust1">
+					<div class="panel-heading">
+						<h4>Insight</h4>
+					</div>
+					<div id="insight-reference" class="panel-body">
+					
+					</div>
+				</div>
+				
 				<!-- Around You -->
-				<div class="panel panel-cust2">
+				<div class="panel panel-cust1">
 					<div class="panel-heading">
 						<h4>Around You</h4>
 					</div>
@@ -254,19 +264,12 @@
 					</div>
 				</div>
 				
-				<!-- Insigt -->
-				<div class="panel panel-cust2">
-					<div class="panel-heading">
-						<h4>Insight</h4>
-					</div>
-					<div class="panel-body">
-					</div>
-				</div>
+				
 				
 				
 				
 				<!-- Promostions -->
-				<div class="panel panel-cust2">
+				<div class="panel panel-cust1">
 					<div class="panel-heading">
 						<h4>Promotions</h4>
 					</div>
@@ -275,7 +278,7 @@
 				</div>
 				
 				
-				<div class="panel panel-cust2">
+				<div class="panel panel-cust1">
 					<div class="panel-heading">
 						<h4>May Suitable for you</h4>
 					</div>
@@ -339,7 +342,7 @@
 			
 			<!-- Tips Panel -->
 			<div class="col-xs-12 col-sm-4" id="sidebar">
-				<div class="panel panel-cust1">
+				<div class="panel panel-cust3">
 					<div class="panel-heading">
 						
 						<h4>Tips
@@ -369,7 +372,7 @@
 				<!-- End Tips Panel -->
 				
 				<!-- Troubleshooting Panel -->
-				<div class="panel panel-cust1">
+				<div class="panel panel-cust3">
 					<div class="panel-heading">
 						
 						<h4>Troubleshooting
@@ -447,7 +450,9 @@
 						</button>
 					</h4>
 					<p><%= model %></p>
-              		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              		<p>Fix Twitter Sentiment Analysis</p>
+              		<p>Ranking Engine </p>
+              		<p>Map items change based on product list </p>
              		<p>
              			
              		</p>
@@ -469,11 +474,18 @@
 				<p class="list-group-item-text"><%= ref_desc %></p>	
 				 
 				<!--p class="item-desc"> Rating Score: <%= rank_score %> </p-->			
-			</a>
-			
-			
-			 
-		</script>
+			</a>	 
+	</script>
+	
+	<script id="insightTemplate" type="text/template">
+		<h4>Twitter Sentiment Analysis</h4>	
+		<p> <%= topic %></p>
+		<h5><span class="label label-default">Very Negative <%= veryNegative %>% </span>&nbsp;
+		<span class="label label-default">Negative <%= negative %>% </span>&nbsp;
+		<span class="label label-default">Neutral <%= neutral %>% </span>&nbsp;
+		<span class="label label-default">Positive <%= positive %>% </span>&nbsp;
+		<span class="label label-default">Very Positive <%= veryPositive %>% </span></h5>			 
+	</script>
 
 	
 	
@@ -503,12 +515,18 @@
 	<script src="js/views/myProductView.js"></script>
 	<script src="js/views/myProductListView.js"></script>
 
+
 	<script src="js/models/reference.js"></script>
 	<script src="js/collections/referenceList.js"></script>
 	<script src="js/views/referenceView.js"></script>
 	<script src="js/views/referenceListView.js"></script>
 	<script src="js/views/tipsListView.js"></script>
 	<script src="js/views/troubleshootListView.js"></script>
+	
+	<script src="js/models/insight.js"></script>
+	<script src="js/collections/insightList.js"></script>
+	<script src="js/views/insightView.js"></script>
+	<script src="js/views/insightListView.js"></script>
 	
 	<script src="js/gmap/map.js"></script>
 	

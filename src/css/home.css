@@ -73,22 +73,22 @@ footer {
 
 
 .panel-cust2 {
-  border-color: #be7582;
+  border-color: #DEB887;
 }
 .panel-cust2 > .panel-heading {
   color: #fff;
-  background-color: #be7582;
-  border-color: #be7582;
+  background-color: #DEB887;
+  border-color: #DEB887;
 }
 .panel-cust2 > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #be7582;
+  border-top-color: #DEB887;
 }
 .panel-cust2 > .panel-heading .badge {
-  color: #be7582;
+  color: #DEB887;
   background-color: #fff;
 }
 .panel-cust2 > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #be7582;
+  border-bottom-color: #DEB887;
 }
 
 
@@ -107,8 +107,33 @@ footer {
   color: #01aea1;
   background-color: #fff;
 }
+
+.panel-cust3 > .panel-heading i {
+  color: #fff;
+}
+
 .panel-cust3 > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #01aea1;
+}
+
+
+.panel-cust4 {
+  border-color: #5bc0de;
+}
+.panel-cust4 > .panel-heading {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+.panel-cust4 > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #5bc0de;
+}
+.panel-cust4 > .panel-heading .badge {
+  color: #5bc0de;
+  background-color: #fff;
+}
+.panel-cust4 > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #5bc0de;
 }
 
 

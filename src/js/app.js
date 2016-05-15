@@ -4,7 +4,7 @@ var app = app || {};
 
 
 app.load = function() {
-//	alert(navigator.userAgent);
+	//alert(navigator.userAgent);
 	
 	app.GoogleMap.getInstance().init();
 	
