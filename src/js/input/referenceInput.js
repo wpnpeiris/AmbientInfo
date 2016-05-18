@@ -87,17 +87,31 @@ app.ReferenceInput = function() {
 	
 	this.listYoutubeRefs = function(request, refListView) {
 		request.execute(function(response) {
-			var refs = [];
+			
+			var contents = new Object();
+			
+			var rank_endpoint = app.SERVICE_ENPOINT + "/ambientinfo/rank?userId=" + app.UserProfile.getInstance().getUserId();
+			
 			$.each( response.items, function( idx, obj ) {
-//				alert(JSON.stringify(obj));
 				var content = new Object();
-				content["ref_id"] = obj.snippet.title;
+				content["ref_id"] = obj.id.videoId;
+				content["ref_title"] = obj.snippet.title;
 				content["ref_desc"] = obj.snippet.description;
 				content["ref_uri"] = "https://www.youtube-nocookie.com/embed/" + obj.id.videoId;
 				content["ref_thumbnails"] = obj.snippet.thumbnails.medium.url;
-				refs[idx] = content;
+				
+				contents[obj.id.videoId] = content;
+				rank_endpoint += "&items=" + obj.id.videoId;
 			});
-			refListView.reset(refs);
+			
+			var refs = [];
+			$.getJSON(rank_endpoint, function( data ) {
+				console.log('Response ReferenceInput.updateViews: ' + data); 
+				$.each( data, function( idx, obj ) {
+					refs[idx] = contents[obj];
+				});
+				refListView.reset(refs);
+			});
 		});
 	}
 	
@@ -107,32 +121,47 @@ app.ReferenceInput = function() {
 		var request = gapi.client.youtube.search.list({
 			q: query,
 			relevanceLanguage: lang,
-			maxResults: 25,
+			maxResults: 5,
 		    part: 'snippet'
 		});
 		
 		return request;
 	}
 	
-	this.updateViews = function(userid, refid) {
-		console.log('Call ReferenceInput.updateViews'); 
-		$.getJSON( app.SERVICE_ENPOINT + "/views/" + userid + "/" + refid, function( data ) {
-			console.log('Response ReferenceInput.updateViews: ' + data); 
-		});
-	}
+//	this.updateViews = function(userid, refid) {
+//		console.log('Call ReferenceInput.updateViews'); 
+//		$.getJSON( app.SERVICE_ENPOINT + "/views/" + userid + "/" + refid, function( data ) {
+//			console.log('Response ReferenceInput.updateViews: ' + data); 
+//		});
+//	}
 	
 	this.updateLike = function(userid, refid) {
 		console.log('Call ReferenceInput.updateViews'); 
-		$.getJSON( app.SERVICE_ENPOINT + "/preferences/" + userid + "/" + refid + "/like", function( data ) {
-			console.log('Response ReferenceInput.updateViews: ' + data); 
+		var data = '{"userId": "' + userid + '", "itemId": "' + refid + '"}';
+		$.ajax({
+			 type: 'POST',
+			 url: app.SERVICE_ENPOINT + '/ambientinfo/event',
+			 data: data,
+			 dataType: "json",
+			 contentType: "application/json; charset=utf-8",
+			 success: function(){
+				 callback();
+			  }, 
+			  error: function() {
+//				  alert('error', "Request Failed");
+			  }
 		});
+		
+//		$.getJSON( app.SERVICE_ENPOINT + "/preferences/" + userid + "/" + refid + "/like", function( data ) {
+//			console.log('Response ReferenceInput.updateViews: ' + data); 
+//		});
 	}
 	
 	this.updateDislike = function(userid, refid) {
 		console.log('Call ReferenceInput.updateViews'); 
-		$.getJSON( app.SERVICE_ENPOINT + "/preferences/" + userid + "/" + refid + "/dislike", function( data ) {
-			console.log('Response ReferenceInput.updateViews: ' + data); 
-		});
+//		$.getJSON( app.SERVICE_ENPOINT + "/preferences/" + userid + "/" + refid + "/dislike", function( data ) {
+//			console.log('Response ReferenceInput.updateViews: ' + data); 
+//		});
 	}
 	
 	this.genInputQuery  = function() {

@@ -33,11 +33,12 @@ app.load = function() {
 	//Listen on Reference Model (Popup window for reference URL container)
 	$('#refModal').on('show.bs.modal', function (event) {
 		var refid = $(event.relatedTarget).data('refid');
+		var reftitle = $(event.relatedTarget).data('reftitle');
 		var refdesc = $(event.relatedTarget).data('refdesc');
 		var refuri = $(event.relatedTarget).data('refuri');
 		
 		var modal = $(this);
-		modal.find('.modal-title').text(refid );
+		modal.find('.modal-title').text(reftitle );
 		modal.find('.modal-body iframe').attr("src", refuri);
 		modal.find('.modal-body iframe').attr("height", ($( window ).height() - 300));
 
@@ -50,13 +51,13 @@ app.load = function() {
 		modal.find('#refId').val(refid);
 		modal.find('#userId').val(userid);
 				
-		refInput.updateViews(userid, refid);
+//		refInput.updateViews(userid, refid);
 	});
 	
 	var modal = $('#refModal');
 	modal.find('#likebtn').on('click', function(event) {
 		var refInput = app.ReferenceInput.getInstance();
-		refInput.updateLike(modal.find('#userId').val(), modal.find('#refId').val());
+		refInput.updateLike(app.UserProfile.getInstance().getUserId(), modal.find('#refId').val());
 	});
 	
 	modal.find('#dislikebtn').on('click', function(event) {

@@ -6,6 +6,7 @@ var app = app || {};
 app.Reference = Backbone.Model.extend({
 	defaults: {
 		ref_id: 'Unknown',
+		ref_title: 'Unknown',
 		ref_desc: [],
 		ref_uri: 'Unknown',
 		ref_thumbnails: 'Unknown',

@@ -17,6 +17,10 @@ app.UserProfile = function() {
 		}	
 	}
 	
+	this.getUserId = function() {
+		return this.userProp['primaryEmail'].split('%40')[0];
+	}
+	
 	this.getProperty = function(key) {
 		return this.userProp[key];
 	}
