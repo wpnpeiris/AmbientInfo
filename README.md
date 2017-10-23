@@ -1,7 +1,7 @@
 # AmbientInfo
-The attempt of this work is to build the concept of a smart system that perceives user’s preferences and activities toward the use of publicly available services and user’s own device information to provide a novel interface of services.
-
-The context for the application consists of personalized recommended features that evolve continuous learning from its environment and other users.
+Every person in nowadays is attached to set of products or services. They have their own preferred brands, service partner etc. The diversity of available products/services open for more options and even make harder for the right decision of selection.
+AmbientInfo attempts describe this problem in term of ubiquitous computing and show the possibility of implementing a personalized assistance application.
+AmbientInfo does not simply provide recommendations as an output of a query service. It further classifies the data model with use of Machine Learning algorithms like Collaborative Filtering and Natural Language Processing to provide more personalized recommendations.
 
  * Usage and Troubleshooting Tips: 
   The application captures registered products/services and recommends Usage/Troubleshooting Tips crawling over public content  service APIs, e.g Youtube, Google.
@@ -43,7 +43,7 @@ Another option is to access membership data of third parties. Most commercial en
 
 The application recommends set of Usage tips based on registered products/services. The recommendation of Usage/Troubleshooting tips is based on Content-based filtering and Collaborative filtering. Content-based filtering is simply achieved with Query model of Youtube/Google APIs. Also, the application further captures user’s collaborative information (like/dislike, share, comments on contents) to rank the tips.
 
-![N|Solid](troubleshooting.png)
+![N|Solid](tips_like.png)
 
 #### Around You
 ![N|Solid](around.png)
@@ -56,6 +56,7 @@ The application prototype shows how Google Maps API is used to discover places a
 ![N|Solid](insight.png)
 
 Sentiment Analysis is applied on Twitter feeds, to discover community view of Product/Service.
-
+It is even possible to show more insight of the products/services. For an example, services like electricity can be brought into the application and show current usage of the electricity and compare it with past usage.
+If the product is a device like Mobile/Tablet, the application can capture and show battery and memory usage of the device. This is possible with most IoT devices available today. 
 
 
