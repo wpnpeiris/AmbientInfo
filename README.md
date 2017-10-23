@@ -31,6 +31,25 @@ With all these sources of data, the system consolidates data further querying on
 
 ### System Context Features
 #### Registered Products/Services
+
+![N|Solid](myproduct.png)
 The user is provided with an option to enter his/her Product/Service details. Also, it may possible to auto detect user's newly purchase products/services. There are various possibilities to achieve this.
 One option is to use transaction data of user’s Credit/Debit Cards with an integration of Bank or Financial institution's services. Using person transaction data, the application can build more knowledge of the user. It is possible to capture user’s frequently access shopping malls, type of purchases etc.
 Another option is to access membership data of third parties. Most commercial entities provide with membership offers to improve their business. AmbientInfo can use (if possible) to capture these data to detect user’s product/services.
+
+#### Recommended Usage/Troubleshooting Tips
+![N|Solid](tips.png)
+The application recommends set of Usage tips based on registered products/services. The recommendation of Usage/Troubleshooting tips is based on Content-based filtering and Collaborative filtering. Content-based filtering is simply achieved with Query model of Youtube/Google APIs. Also, the application further captures user’s collaborative information (like/dislike, share, comments on contents) to rank the tips.
+
+#### Around You
+![N|Solid](around.png)
+The application reads the current location of the user. This is possible with any modern devices. And use the user’s location information to discover near by resources that user may find useful.
+
+The application prototype shows how Google Maps API is used to discover places around user’s current location. This can be further improved to provide more personalized information. For an example, if the user owns a vehicle there is high possibility user may interest of parking places or gas station around him/her. 
+
+#### Insight
+![N|Solid](insight.png)
+Sentiment Analysis is applied on Twitter feeds, to discover community view of Product/Service.
+
+
+
