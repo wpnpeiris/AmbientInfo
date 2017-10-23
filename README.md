@@ -3,6 +3,8 @@ Every person in nowadays is attached to set of products or services. They have t
 AmbientInfo attempts describe this problem in term of ubiquitous computing and show the possibility of implementing a personalized assistance application.
 AmbientInfo does not simply provide recommendations as an output of a query service. It further classifies the data model with use of Machine Learning algorithms like Collaborative Filtering and Natural Language Processing to provide more personalized recommendations.
 
+### Application Context
+
  * Usage and Troubleshooting Tips: 
   The application captures registered products/services and recommends Usage/Troubleshooting Tips crawling over public content  service APIs, e.g Youtube, Google.
   
