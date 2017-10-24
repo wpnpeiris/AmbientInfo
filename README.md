@@ -25,7 +25,7 @@ The main entities that classify the application context are user’s own product
 Together with input from user’s profile and products/services, AmbientInfo queries on publicly available APIs and classify data using machine learning algorithms to provide more personalized features.
 
 ### System Overview
-![N|Solid](system.png)
+![N|Solid](docs/system.png)
 
 The main domain entities of the system are User’s Profile, Products, and Services. The Product itself can be IoTs or any standard thing with basic properties like manufacturer, model etc. The Services could be anything that user has subscribed with a provider.
 All these domain entities act as the source of sense data for the system. Reading from user’s Profile, the system captures useful information of user’s age, language, city etc. From products, the system captures information like manufacture, type, model etc. If the product is an IoT, other useful information like user location and device specific data are also captured to show more insight of the product. In the same way, services provide information of the provider, service type, package etc to the system.
@@ -34,7 +34,7 @@ With all these sources of data, the system consolidates data further querying on
 ### System Context Features
 #### Registered Products/Services
 
-![N|Solid](myproduct.png)
+![N|Solid](docs/myproduct.png)
 
 The user is provided with an option to enter his/her Product/Service details. Also, it may possible to auto detect user's newly purchase products/services. There are various possibilities to achieve this.
 One option is to use transaction data of user’s Credit/Debit Cards with an integration of Bank or Financial institution's services. Using person transaction data, the application can build more knowledge of the user. It is possible to capture user’s frequently access shopping malls, type of purchases etc.
@@ -45,7 +45,7 @@ Another option is to access membership data of third parties. Most commercial en
 
 The application recommends set of Usage tips based on registered products/services. The recommendation of Usage/Troubleshooting tips is based on Content-based filtering and Collaborative filtering. Content-based filtering is simply achieved with Query model of Youtube/Google APIs. Also, the application further captures user’s collaborative information (like/dislike, share, comments on contents) to rank the tips.
 
-![N|Solid](tips_like.png)
+![N|Solid](docs/tips_like.png)
 
 #### Around You
 ![N|Solid](around.png)
@@ -55,7 +55,7 @@ The application reads the current location of the user. This is possible with an
 The application prototype shows how Google Maps API is used to discover places around user’s current location. This can be further improved to provide more personalized information. For an example, if the user owns a vehicle there is high possibility user may interest of parking places or gas station around him/her. 
 
 #### Insight
-![N|Solid](insight.png)
+![N|Solid](docs/insight.png)
 
 Sentiment Analysis is applied on Twitter feeds, to discover community view of Product/Service.
 It is even possible to show more insight of the products/services. For an example, services like electricity can be brought into the application and show current usage of the electricity and compare it with past usage.
